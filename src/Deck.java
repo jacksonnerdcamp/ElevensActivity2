@@ -70,6 +70,15 @@ public class Deck {
      */
     public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+        int card2;
+        Card tempCard;
+        for(int n = 0; n < size; n++)
+        {
+            card2 = (int)(Math.random() * size + 1);
+            tempCard = cards.get(card2);
+            cards.set(card2, cards.get(n));
+            cards.set(n, tempCard);
+        }
     }
 
     /**
@@ -79,8 +88,11 @@ public class Deck {
      */
     public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-        this.size--;
-        return cards.get(size + 1);
+        if(!cards.isEmpty()) {
+            this.size--;
+            return cards.get(size);
+        }
+        return null;
     }
 
     /**
