@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class Deck {
 
-    /**
+     /**
      * cards contains all the cards in the deck.
      */
     private List<Card> cards;
@@ -74,7 +74,7 @@ public class Deck {
         Card tempCard;
         for(int n = 0; n < size; n++)
         {
-            card2 = (int)(Math.random() * size + 1);
+            card2 = (int)(Math.random() * (size - 1) + 1);
             tempCard = cards.get(card2);
             cards.set(card2, cards.get(n));
             cards.set(n, tempCard);
